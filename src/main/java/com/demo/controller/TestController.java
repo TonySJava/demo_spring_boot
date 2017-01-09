@@ -29,7 +29,7 @@ public class TestController {
      *
      * @return String
      */
-    @RequestMapping("")
+    @RequestMapping()
     String test() {
         return testService.test();
     }
