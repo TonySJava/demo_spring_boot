@@ -1,14 +1,13 @@
 package com.demo.service;
 
-import org.springframework.stereotype.Service;
-
 import com.demo.base.BaseService;
+import org.springframework.stereotype.Service;
 
 @Service()
 // @Transactional
-public class TestService extends BaseService{
+public class TestService extends BaseService {
 
-	public String test() {
-		return "TestService.test()";
-	}
+    public String test() {
+        return "TestService.test()";
+    }
 }

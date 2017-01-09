@@ -8,7 +8,7 @@ import org.springframework.test.context.junit4.SpringRunner;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class DemoApplicationTests {
+public class TestServiceTest {
 
 	@Autowired
 	private TestService testService;
@@ -17,5 +17,6 @@ public class DemoApplicationTests {
 	public void test() {
 		System.out.println(testService.test());
 	}
+
 
 }

@@ -61,13 +61,11 @@ public class TestController {
 	 * @author jerome_s@qq.com
 	 * @param name
 	 *            名字(默认必填)
-	 * @param age
-	 *            年龄(非必填)
 	 * @return
 	 */
 	@RequestMapping("test/{name}")
 	String testRestful(@PathVariable String name) {
 		return testService.test() + name;
 	}
-	
+
 }
