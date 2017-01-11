@@ -24,5 +24,9 @@ IDEA
    访问资源
    http://127.0.0.1/test
    
-### 对应博客
-http://blog.csdn.net/column/details/13209.html
+### 打包部署
+
+在项目根路径下使用maven命令打包：mvn clean package 
+
+将target目录下的jar拷贝，并运行项目： java –jar demo_spring_boot-0.0.1-SNAPSHOT.jar 
+多环境项目运行：java -jar demo_spring_boot-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
