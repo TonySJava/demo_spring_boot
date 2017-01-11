@@ -24,7 +24,7 @@ public interface CityMapper {
     City selectOneCityByState(@Param("state") String state);
 
     /**
-     * 使用xml形式
+     * 使用xml形式，xml id默认为方法名
      *
      * @param id
      * @return
