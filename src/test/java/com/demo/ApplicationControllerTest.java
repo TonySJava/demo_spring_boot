@@ -32,8 +32,8 @@ public class ApplicationControllerTest {
         RequestBuilder request = get("/test");
         mvc.perform(request).andExpect(status().isOk()).andExpect(content().string("hello world"));
 
-        request = get("/test/test").param("name", "jerome");
-        mvc.perform(request).andExpect(status().isOk()).andExpect(content().string("jerome"));
+//        request = get("/test/test").param("name", "jerome");
+//        mvc.perform(request).andExpect(status().isOk()).andExpect(content().string("jerome"));
     }
 
 }

@@ -1,14 +1,16 @@
 package com.demo.controller;
 
 import com.demo.model.User;
+import com.demo.service.TestService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-
-import com.demo.service.TestService;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -19,9 +21,25 @@ import java.util.Map;
 @RestController
 @RequestMapping("test")
 public class TestController {
-
+    private Logger logger =  LoggerFactory.getLogger(this.getClass());
     @Autowired
     private TestService testService;
+
+    // 32位随机字符串
+    @Value(value = "${jerome.random.value}")
+    private String randomValue;
+
+    // int类型的随机数字
+    @Value(value = "${jerome.random.int}")
+    private int randomInt;
+
+    // 自定义名字
+    @Value(value = "${jerome.name}")
+    private String name;
+
+    // 属性占位符属性 ${jerome.name} is a domain name
+    @Value(value = "${jerome.desc}")
+    private String desc;
 
     /**
      * 不区分get post
@@ -31,7 +49,10 @@ public class TestController {
      */
     @RequestMapping()
     String test() {
-        return testService.test();
+        logger.debug("this is debug.");
+        logger.info("this is info.");
+        logger.warn("this is warn.");
+        return "hello world";
     }
 
     /**
@@ -104,5 +125,22 @@ public class TestController {
     User testModel() {
         return new User("苏志达", 26, 0, new Date(), 99.6);
     }
+
+    /**
+     * 获取配置文件的数据
+     *
+     * @return Json
+     */
+    @RequestMapping("testProp")
+    Map<String, Object> testProp() {
+        Map<String, Object> map = new HashMap<>();
+        map.put("title", "hello world");
+        map.put("randomValue", randomValue);
+        map.put("randomInt", randomInt);
+        map.put("name", name);
+        map.put("desc", desc);
+        return map;
+    }
+
 
 }
