@@ -30,3 +30,6 @@ IDEA
 
 将target目录下的jar拷贝，并运行项目： java –jar demo_spring_boot-0.0.1-SNAPSHOT.jar 
 多环境项目运行：java -jar demo_spring_boot-0.0.1-SNAPSHOT.jar --spring.profiles.active=test
+
+### Spring boot 例子
+https://github.com/spring-projects/spring-boot/tree/master/spring-boot-samples
