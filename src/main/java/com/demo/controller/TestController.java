@@ -6,6 +6,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -139,6 +140,19 @@ public class TestController {
         map.put("randomInt", randomInt);
         map.put("name", name);
         map.put("desc", desc);
+        return map;
+    }
+
+    /**
+     * 跨域请求
+     *
+     * @return Json
+     */
+    @CrossOrigin(origins = "http://localhost/test/cross")
+    @RequestMapping("cross")
+    Map<String, Object> cross(@RequestParam("name") String name) {
+        Map<String, Object> map = new HashMap<>();
+        map.put("name", name);
         return map;
     }
 

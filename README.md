@@ -19,10 +19,10 @@ IDEA
    http://127.0.0.1/test 
    
    访问页面
-   http://127.0.0.1/test
+   http://127.0.0.1/index.html
    
    访问资源
-   http://127.0.0.1/test
+   http://127.0.0.1/imgs/desktop.jpg
    
 ### 打包部署
 
