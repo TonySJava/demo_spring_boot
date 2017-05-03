@@ -66,6 +66,7 @@
 					<target>1.8</target>
 				</configuration>
 			</plugin>
+			<!--spring-boot-maven-plugin：打包项目为可执行的jar包-->
 			<plugin>
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
