@@ -6,18 +6,9 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 @RestController
 @RequestMapping("test")
@@ -34,8 +25,8 @@ public class TestController {
     @Value(value = "${jerome.random.int}")
     private int randomInt;
 
-    // 自定义名字
-    @Value(value = "${jerome.name}")
+    // 自定义名字，如果没有配置使用默认值jerome
+    @Value(value = "${jerome.name:jerome}")
     private String name;
 
     // 属性占位符属性 ${jerome.name} is a domain name
